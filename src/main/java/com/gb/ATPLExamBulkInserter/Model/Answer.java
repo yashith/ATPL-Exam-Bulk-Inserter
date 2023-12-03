@@ -24,8 +24,8 @@ public class Answer implements IModel {
         this.id = Integer.parseInt(record[0]);
         this.questionId= Integer.parseInt(record[1]);
         this.answer= record[2];
-        this.isImage = Boolean.getBoolean(record[3]);
-        this.isCorrectAnswer= Boolean.getBoolean(record[4]);
+        this.isImage = record[3].equalsIgnoreCase("true")?true:false;
+        this.isCorrectAnswer= record[4].equalsIgnoreCase("true")?true:false;
 
     }
 
