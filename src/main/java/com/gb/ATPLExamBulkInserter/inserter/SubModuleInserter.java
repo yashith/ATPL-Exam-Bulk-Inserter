@@ -44,6 +44,7 @@ public class SubModuleInserter implements IInserter{
 
     @Override
     public void insertWithDB(IModel subModule) {
+        logger.info("Inserting record {}",subModule.toString());
         subModuleRepository.save((SubModule)subModule);
     }
 

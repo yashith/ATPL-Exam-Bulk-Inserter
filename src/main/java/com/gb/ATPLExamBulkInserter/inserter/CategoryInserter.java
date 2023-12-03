@@ -41,6 +41,7 @@ public class CategoryInserter implements IInserter {
 
     @Override
     public void insertWithDB(IModel category) {
+        logger.info("Inserting record {}",category.toString());
         categoryRepository.save((Category) category);
     }
 

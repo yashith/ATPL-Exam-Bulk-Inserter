@@ -44,6 +44,7 @@ public class QuestionInserter implements IInserter{
 
     @Override
     public void insertWithDB(IModel question) {
+        logger.info("Inserting record {}",question.toString());
         questionRepository.save((Question)question);
     }
 

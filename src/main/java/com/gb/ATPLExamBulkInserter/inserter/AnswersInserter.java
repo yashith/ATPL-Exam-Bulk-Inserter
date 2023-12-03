@@ -44,6 +44,7 @@ public class AnswersInserter implements IInserter {
 
     @Override
     public void insertWithDB(IModel answer) {
+        logger.info("Inserting record {}",answer.toString());
         answerRepository.save((Answer) answer);
     }
 
