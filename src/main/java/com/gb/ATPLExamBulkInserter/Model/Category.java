@@ -15,11 +15,9 @@ public class Category implements IModel {
     private String description;
 
     public Category(String[] record) {
-        if (record.length == 3) {
-            this.id = Integer.parseInt(record[0]);
-            this.name = record[1];
-            this.description = record[2];
-        }
+        this.id = Integer.parseInt(record[0]);
+        this.name = record[1];
+        this.description = record[2];
     }
 
     public Category() {

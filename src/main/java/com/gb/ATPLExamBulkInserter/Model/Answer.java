@@ -21,13 +21,12 @@ public class Answer implements IModel {
     private boolean isCorrectAnswer;
 
     public Answer(String[] record) {
-        if (record.length == 5) {
-            this.id = Integer.parseInt(record[0]);
-            this.questionId= Integer.parseInt(record[1]);
-            this.answer= record[2];
-            this.isImage = Boolean.getBoolean(record[3]);
-            this.isCorrectAnswer= Boolean.getBoolean(record[4]);
-        }
+        this.id = Integer.parseInt(record[0]);
+        this.questionId= Integer.parseInt(record[1]);
+        this.answer= record[2];
+        this.isImage = Boolean.getBoolean(record[3]);
+        this.isCorrectAnswer= Boolean.getBoolean(record[4]);
+
     }
 
     public Answer() {

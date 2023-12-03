@@ -18,11 +18,9 @@ public class Question implements IModel{
     private String question;
 
     public Question(String[] record) {
-        if (record.length == 3) {
-            this.id = Integer.parseInt(record[0]);
-            this.subModuleId= Integer.parseInt(record[1]);
-            this.question= record[2];
-        }
+        this.id = Integer.parseInt(record[0]);
+        this.subModuleId= Integer.parseInt(record[1]);
+        this.question= record[2];
     }
 
     public Question() {
