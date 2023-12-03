@@ -24,7 +24,7 @@ public class SubModuleInserter implements IInserter{
     @Autowired
     SubModuleRepository subModuleRepository;
     @Autowired
-    CSVReader csvCategoryReader;
+    CSVReader csvSubModuleReader;
     @Autowired
     Environment env;
     @Override
@@ -49,7 +49,7 @@ public class SubModuleInserter implements IInserter{
 
     public void insertCsv(InserterTypes insertType) {
         try {
-            List<String[]> records = csvCategoryReader.readAll();
+            List<String[]> records = csvSubModuleReader.readAll();
             for (String[] record : records) {
                 SubModule subModule= new SubModule(record);
                 if (insertType == InserterTypes.DB_CLIENT) {

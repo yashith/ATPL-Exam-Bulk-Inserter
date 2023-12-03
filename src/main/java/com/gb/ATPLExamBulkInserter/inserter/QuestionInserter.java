@@ -24,7 +24,7 @@ public class QuestionInserter implements IInserter{
     @Autowired
     QuestionRepository questionRepository;
     @Autowired
-    CSVReader csvCategoryReader;
+    CSVReader csvQuestionReader;
     @Autowired
     Environment env;
     @Override
@@ -49,7 +49,7 @@ public class QuestionInserter implements IInserter{
 
     public void insertCsv(InserterTypes insertType) {
         try {
-            List<String[]> records = csvCategoryReader.readAll();
+            List<String[]> records = csvQuestionReader.readAll();
             for (String[] record : records) {
                 Question question = new Question(record);
                 if (insertType == InserterTypes.DB_CLIENT) {
