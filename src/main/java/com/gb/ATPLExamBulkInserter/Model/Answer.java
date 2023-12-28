@@ -3,12 +3,14 @@ package com.gb.ATPLExamBulkInserter.Model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
 public class Answer implements IModel {
     @Id
     private int id;

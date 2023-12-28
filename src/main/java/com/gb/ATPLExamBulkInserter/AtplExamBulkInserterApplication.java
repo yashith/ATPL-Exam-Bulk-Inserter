@@ -2,6 +2,7 @@ package com.gb.ATPLExamBulkInserter;
 
 import com.gb.ATPLExamBulkInserter.enums.InserterTypes;
 import com.gb.ATPLExamBulkInserter.inserter.IInserter;
+import com.gb.ATPLExamBulkInserter.parsers.PdfParser;
 import org.apache.commons.cli.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +22,8 @@ public class AtplExamBulkInserterApplication implements CommandLineRunner {
     IInserter questionInserter;
     @Autowired
     IInserter answersInserter;
+    @Autowired
+    PdfParser pdfParser;
     private static Logger logger = LoggerFactory.getLogger(AtplExamBulkInserterApplication.class);
 
     public static void main(String[] args) {
@@ -36,6 +39,7 @@ public class AtplExamBulkInserterApplication implements CommandLineRunner {
         options.addOption(new Option("s", "To insert Submodules"));
         options.addOption(new Option("q", "To insert Questions"));
         options.addOption(new Option("a", "To insert Answers"));
+        options.addOption(new Option("p", "To parse PDF"));
 
         CommandLineParser cliParser = new DefaultParser();
         CommandLine cli = cliParser.parse(options, args);
@@ -60,6 +64,9 @@ public class AtplExamBulkInserterApplication implements CommandLineRunner {
         }
         if (cli.hasOption("a")) {
             answersInserter.insertCsv(it);
+        }
+        if (cli.hasOption("p")){
+            pdfParser.init();
         }
     }
 }

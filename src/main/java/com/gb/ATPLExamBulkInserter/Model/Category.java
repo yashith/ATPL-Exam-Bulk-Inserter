@@ -2,12 +2,14 @@ package com.gb.ATPLExamBulkInserter.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Entity
 @Getter
 @Setter
+@AllArgsConstructor
 public class Category implements IModel {
     @Id
     private int id;

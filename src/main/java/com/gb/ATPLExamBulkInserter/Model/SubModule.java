@@ -3,12 +3,14 @@ package com.gb.ATPLExamBulkInserter.Model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Setter
 @Getter
 @Entity
+@AllArgsConstructor
 public class SubModule implements IModel{
     @Id
     int id;
